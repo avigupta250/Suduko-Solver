@@ -73,12 +73,13 @@ const SudukoGrid = () => {
       const newGrid = grid.map((r) => [...r]);
       newGrid[row][col] = "";
       setGrid(newGrid);
-      const currentIndex = row * 9 + col;
-      const prevIndex = currentIndex - 1;
+      
+    //   const currentIndex = row * 9 + col;
+    //   const prevIndex = currentIndex - 1;
 
-      if (inputRefs.current[prevIndex]) {
-        inputRefs.current[prevIndex].focus();
-      }
+    //   if (inputRefs.current[prevIndex]) {
+    //     inputRefs.current[prevIndex].focus();
+    //   }
     }
     if (event.key == "Backspace" && grid[row][col] === "") {
       const currentIndex = row * 9 + col;
@@ -97,7 +98,7 @@ const SudukoGrid = () => {
     const newGrid = grid.map((row) => row.slice());
     setBeforeSolve(grid.map((row) => [...row]));
 
-    console.log("Before Solve:", beforeSolve);
+    // console.log("Before Solve:", beforeSolve);
 
 
     if (solveSudoku(newGrid)) {
@@ -106,7 +107,7 @@ const SudukoGrid = () => {
     //   setTimeout(()=>{
     //     console.log("After Solve:", grid);
     //   },1000)
-      console.log("After Solve:", grid);
+    //   console.log("After Solve:", grid);
     } else {
       alert("No solution exists for the given input.");
     }
